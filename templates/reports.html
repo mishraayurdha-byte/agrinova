@@ -1,0 +1,562 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Reports Center | AgriNova AI v2.0
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ========================================= -->
+    <!-- Header -->
+    <!-- ========================================= -->
+
+    <div class="row mb-4">
+
+        <div class="col-lg-8">
+
+            <h2 class="fw-bold">
+
+                Reports & Analytics
+
+            </h2>
+
+            <p class="text-muted">
+
+                View AI predictions, history, analytics and export reports.
+
+            </p>
+
+        </div>
+
+        <div class="col-lg-4 text-end">
+
+            <button
+                class="btn btn-success"
+                id="refreshReport">
+
+                <i class="fas fa-sync-alt"></i>
+
+                Refresh
+
+            </button>
+
+            <button
+                class="btn btn-primary"
+                id="exportPdf">
+
+                <i class="fas fa-file-pdf"></i>
+
+                Export PDF
+
+            </button>
+
+            <button
+                class="btn btn-success"
+                id="exportExcel">
+
+                <i class="fas fa-file-excel"></i>
+
+                Export Excel
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Statistics Cards -->
+    <!-- ========================================= -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-lg-3">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+
+                        Crop Predictions
+
+                    </h6>
+
+                    <h2 id="cropCount">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+
+                        Disease Detection
+
+                    </h6>
+
+                    <h2 id="diseaseCount">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+
+                        Yield Predictions
+
+                    </h6>
+
+                    <h2 id="yieldCount">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h6 class="text-muted">
+
+                        AI Chat Sessions
+
+                    </h6>
+
+                    <h2 id="chatCount">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Charts -->
+    <!-- ========================================= -->
+
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-header">
+
+                    Prediction Distribution
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="predictionChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-header">
+
+                    Monthly Activity
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="activityChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-4">
+            <!-- ========================================= -->
+    <!-- Disease History -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Disease Detection History
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Crop</th>
+
+                        <th>Disease</th>
+
+                        <th>Confidence</th>
+
+                        <th>Severity</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="diseaseHistory">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Crop Prediction History -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Crop Prediction History
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Prediction</th>
+
+                        <th>N</th>
+
+                        <th>P</th>
+
+                        <th>K</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="cropHistory">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Weather History -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Weather History
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>City</th>
+
+                        <th>Temperature</th>
+
+                        <th>Humidity</th>
+
+                        <th>Rainfall</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="weatherHistory">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Yield History -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Yield Prediction History
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Crop</th>
+
+                        <th>State</th>
+
+                        <th>Season</th>
+
+                        <th>Predicted Yield</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="yieldHistory">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Fertilizer History -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Fertilizer Recommendation History
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Crop</th>
+
+                        <th>Recommendation</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="fertilizerHistory">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Irrigation History -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Irrigation History
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Crop</th>
+
+                        <th>Soil Moisture</th>
+
+                        <th>Recommendation</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="irrigationHistory">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Chat History -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4 mb-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                AI Chat History
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Question</th>
+
+                        <th>Answer</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="chatHistory">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='js/reports.js') }}"></script>
+
+{% endblock %}

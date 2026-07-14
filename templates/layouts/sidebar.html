@@ -1,0 +1,239 @@
+<div class="sidebar-wrapper h-100 d-flex flex-column">
+
+    <!-- Sidebar Header -->
+
+    <div class="sidebar-header text-center py-4 border-bottom">
+
+        <div class="mb-3">
+
+            <i class="fas fa-seedling fa-3x text-success"></i>
+
+        </div>
+
+        <h5 class="fw-bold mb-1">
+            AgriNova AI
+        </h5>
+
+        <small class="text-muted">
+            Smart Agriculture Platform
+        </small>
+
+    </div>
+
+    <!-- Navigation -->
+
+    <nav class="flex-grow-1 py-3">
+
+        <ul class="nav flex-column sidebar-menu">
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'home' %}active{% endif %}"
+                   href="{{ url_for('web.home') }}">
+
+                    <i class="fas fa-house me-2"></i>
+
+                    Home
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'dashboard' %}active{% endif %}"
+                   href="{{ url_for('web.dashboard') }}">
+
+                    <i class="fas fa-chart-line me-2"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'disease' %}active{% endif %}"
+                   href="{{ url_for('web.disease') }}">
+
+                    <i class="fas fa-virus me-2"></i>
+
+                    Disease Detection
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'yield_prediction' %}active{% endif %}"
+                   href="{{ url_for('yield_bp.yield_prediction') }}">
+
+                    <i class="fas fa-wheat-awn me-2"></i>
+
+                    Yield Prediction
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'irrigation' %}active{% endif %}"
+                   href="{{ url_for('web.irrigation') }}">
+
+                    <i class="fas fa-droplet me-2"></i>
+
+                    Smart Irrigation
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'weather' %}active{% endif %}"
+                   href="{{ url_for('web.weather') }}">
+
+                    <i class="fas fa-cloud-sun me-2"></i>
+
+                    Weather
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'chatbot' %}active{% endif %}"
+                   href="{{ url_for('web.chatbot') }}">
+
+                    <i class="fas fa-robot me-2"></i>
+
+                    AI Chatbot
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'analytics' %}active{% endif %}"
+                   href="{{ url_for('web.analytics') }}">
+
+                    <i class="fas fa-chart-pie me-2"></i>
+
+                    Analytics
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'reports' %}active{% endif %}"
+                   href="{{ url_for('web.reports') }}">
+
+                    <i class="fas fa-file-export me-2"></i>
+
+                    Reports
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'about' %}active{% endif %}"
+                   href="{{ url_for('web.about') }}">
+
+                    <i class="fas fa-circle-info me-2"></i>
+
+                    About
+
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link
+                   {% if request.endpoint == 'contact' %}active{% endif %}"
+                   href="{{ url_for('web.contact') }}">
+
+                    <i class="fas fa-envelope me-2"></i>
+
+                    Contact
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- AI Status Card -->
+
+    <div class="p-3 border-top">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body text-center">
+
+                <div class="mb-2">
+
+                    <i class="fas fa-microchip fa-2x text-success"></i>
+
+                </div>
+
+                <h6 class="fw-bold mb-2">
+
+                    AI Engine
+
+                </h6>
+
+                <span class="badge bg-success">
+
+                    Online
+
+                </span>
+
+                <hr>
+
+                <small class="text-muted">
+
+                    TensorFlow + Scikit-learn
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Version -->
+
+    <div class="text-center py-3">
+
+        <small class="text-muted">
+
+            AgriNova AI v2.0
+
+        </small>
+
+    </div>
+
+</div>

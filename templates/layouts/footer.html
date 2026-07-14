@@ -1,0 +1,47 @@
+<footer class="footer mt-auto border-top bg-white">
+
+    <div class="container-fluid">
+
+        <div class="row align-items-center py-3">
+
+            <div class="col-md-6">
+
+                <span class="text-muted">
+
+                    © {{ current_year if current_year else 2026 }}
+                    <strong>AgriNova AI v2.0</strong>
+
+                </span>
+
+            </div>
+
+            <div class="col-md-6 text-md-end mt-2 mt-md-0">
+
+                <a href="{{ url_for('web.home') }}"
+                   class="text-decoration-none me-3">
+
+                    Home
+
+                </a>
+
+                <a href="{{ url_for('web.about') }}"
+                   class="text-decoration-none me-3">
+
+                    About
+
+                </a>
+
+                <a href="{{ url_for('web.contact') }}"
+                   class="text-decoration-none">
+
+                    Contact
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>

@@ -1,0 +1,353 @@
+/*
+====================================================
+ AgriNova AI v2.0
+ Responsive Stylesheet
+====================================================
+*/
+
+
+/* ==============================
+   Large Screens
+============================== */
+
+@media (max-width: 1200px) {
+
+
+    .dashboard-card h3 {
+
+        font-size:
+            1.6rem;
+
+    }
+
+
+    .hero-section h1 {
+
+        font-size:
+            2.5rem;
+
+    }
+
+
+}
+
+
+
+/* ==============================
+   Tablet
+============================== */
+
+
+@media (max-width: 992px) {
+
+
+    /* Sidebar */
+
+
+    .sidebar-wrapper {
+
+        position:
+            fixed;
+
+        left:
+            -280px;
+
+        top:
+            0;
+
+        width:
+            280px;
+
+        height:
+            100vh;
+
+        z-index:
+            1050;
+
+        transition:
+            .3s ease;
+
+    }
+
+
+
+    .sidebar-wrapper.show {
+
+        left:
+            0;
+
+    }
+
+
+
+    /* Main Content */
+
+
+    .main-content {
+
+        margin-left:
+            0!important;
+
+    }
+
+
+
+    /* Navbar */
+
+
+    .navbar-brand small {
+
+        display:
+            none;
+
+    }
+
+
+
+    /* Cards */
+
+
+    .dashboard-card {
+
+        margin-bottom:
+            15px;
+
+    }
+
+
+
+}
+
+
+
+/* ==============================
+   Mobile
+============================== */
+
+
+@media (max-width: 768px) {
+
+
+
+    body {
+
+        font-size:
+            14px;
+
+    }
+
+
+
+    /* Header */
+
+
+    .hero-section {
+
+        text-align:
+            center;
+
+        padding:
+            25px!important;
+
+    }
+
+
+
+    .hero-section h1 {
+
+        font-size:
+            2rem;
+
+    }
+
+
+
+    /* Buttons */
+
+
+    .btn-lg {
+
+        width:
+            100%;
+
+        margin-bottom:
+            10px;
+
+    }
+
+
+
+    /* Dashboard */
+
+
+    .dashboard-card h3 {
+
+        font-size:
+            1.5rem;
+
+    }
+
+
+
+    /* Charts */
+
+
+    canvas {
+
+        max-height:
+            250px!important;
+
+    }
+
+
+
+    /* Tables */
+
+
+    .table-responsive {
+
+        overflow-x:
+            auto;
+
+    }
+
+
+
+    table {
+
+        min-width:
+            650px;
+
+    }
+
+
+
+
+    /* Chat */
+
+
+    .chat-window {
+
+        height:
+            400px;
+
+    }
+
+
+
+    .chat-message {
+
+        max-width:
+            90%;
+
+    }
+
+
+
+}
+
+
+
+/* ==============================
+   Small Mobile
+============================== */
+
+
+@media (max-width: 480px) {
+
+
+
+    .navbar-brand h5 {
+
+        font-size:
+            1rem;
+
+    }
+
+
+
+    .navbar-brand img {
+
+        width:
+            35px;
+
+        height:
+            35px;
+
+    }
+
+
+
+    .card-body {
+
+        padding:
+            15px;
+
+    }
+
+
+
+    .display-4 {
+
+        font-size:
+            2rem;
+
+    }
+
+
+
+    .weather-temperature {
+
+        font-size:
+            2rem;
+
+    }
+
+
+
+}
+
+
+
+/* ==============================
+   Print Reports
+============================== */
+
+
+@media print {
+
+
+    .navbar,
+    .sidebar-wrapper,
+    .footer,
+    button {
+
+        display:
+            none!important;
+
+    }
+
+
+
+    .main-content {
+
+        width:
+            100%;
+
+    }
+
+
+
+    .card {
+
+        box-shadow:
+            none!important;
+
+        border:
+            1px solid #ddd;
+
+    }
+
+
+
+}

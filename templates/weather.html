@@ -1,0 +1,320 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Weather Intelligence | AgriNova AI
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Page Header -->
+    <div class="row mb-4">
+
+        <div class="col-md-12">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body">
+
+                    <h2 class="fw-bold text-success">
+                        🌦 Weather Intelligence
+                    </h2>
+
+                    <p class="text-muted mb-0">
+                        Live Weather • 5-Day Forecast • AI Farming Advice
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="row mb-4">
+
+        <div class="col-lg-8">
+
+            <div class="input-group">
+
+                <input
+                    type="text"
+                    id="city"
+                    class="form-control"
+                    placeholder="Enter City Name">
+
+                <button
+                    class="btn btn-success"
+                    id="weatherSearch">
+
+                    Search
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Weather Cards -->
+
+    <div class="row g-7">
+
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+
+            <div class="card weather-card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h6>Temperature</h6>
+
+                    <h2 id="temperatureValue">-- °C</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+
+            <div class="card weather-card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h6>Humidity</h6>
+
+                    <h2 id="humidityValue">-- %</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+
+            <div class="card weather-card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h6>Wind Speed</h6>
+
+                    <h2 id="windValue">-- m/s</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+
+            <div class="card weather-card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h6>Condition</h6>
+
+                    <h4 id="conditionValue">--</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+
+            <div class="card weather-card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h6>City Name</h6>
+
+                    <h4 id="cityName">--</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+
+            <div class="card weather-card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h6>Weather Description</h6>
+
+                    <h4 id="weatherDescription">--</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+       
+
+    </div>
+
+
+
+   <!-- AI Farming Advice -->
+
+<div class="row mt-4">
+
+    <div class="col-lg-12">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-success text-white">
+
+                <h5 class="mb-0">
+                    🤖 AI Farming Advice
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <ul id="adviceList" class="list-group list-group-flush">
+
+                    <li class="list-group-item text-muted">
+                        Search a city to receive AI farming recommendations.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Forecast -->
+
+    <div class="row mt-5">
+
+        <div class="col-lg-12">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-primary text-white">
+
+                    📅 5-Day Forecast
+
+                </div>
+
+                <div class="card-body">
+
+                    <div
+                        id="forecastContainer"
+                        class="row g-3">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+<!-- Weather Charts -->
+
+<div class="row mt-4">
+
+    <div class="col-lg-12">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-info text-white">
+
+                <h5 class="mb-0">
+                    📈 Temperature Forecast
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <canvas id="temperatureChart" height="100"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="row mt-4">
+
+    <div class="col-lg-12">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-dark text-white">
+
+                <h5 class="mb-0">
+
+                    📜 Weather Search History
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>City</th>
+                                <th>Temp</th>
+                                <th>Humidity</th>
+                                <th>Wind</th>
+                                <th>Condition</th>
+                                <th>Time</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="historyTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,215 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Fertilizer Recommendation | AgriNova AI
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Page Header -->
+
+    <div class="row mb-4">
+
+        <div class="col-md-12">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body">
+
+                    <h2 class="text-success mb-1">
+                        🌱 Fertilizer Recommendation
+                    </h2>
+
+                    <p class="text-muted mb-0">
+                        Get the best fertilizer recommendation based on crop, soil and NPK values.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <!-- Input Form -->
+
+        <div class="col-lg-5">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-header bg-success text-white">
+
+                    Soil Information
+
+                </div>
+
+                <div class="card-body">
+
+                    <form id="fertilizerForm">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Crop
+
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="crop"
+                                required>
+
+                                <option value="">Select Crop</option>
+
+                                <option>Rice</option>
+                                <option>Wheat</option>
+                                <option>Maize</option>
+                                <option>Potato</option>
+                                <option>Sugarcane</option>
+                                <option>Cotton</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Soil Type
+
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="soil_type"
+                                required>
+
+                                <option value="">Select Soil</option>
+
+                                <option>Clay</option>
+                                <option>Loamy</option>
+                                <option>Sandy</option>
+                                <option>Black</option>
+                                <option>Red</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>
+
+                                Nitrogen (N)
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="nitrogen"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>
+
+                                Phosphorus (P)
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="phosphorus"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>
+
+                                Potassium (K)
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="potassium"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                        <button
+                            class="btn btn-success w-100"
+                            type="submit">
+
+                            🔍 Get Recommendation
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Result -->
+
+        <div class="col-lg-7">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-header bg-primary text-white">
+
+                    Recommendation Result
+
+                </div>
+
+                <div
+                    class="card-body"
+                    id="resultCard">
+
+                    <div class="text-center text-muted py-5">
+
+                        <h5>
+
+                            🌾 No recommendation yet
+
+                        </h5>
+
+                        <p>
+
+                            Enter the soil details and click
+                            <strong>Get Recommendation</strong>.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/fertilizer.js') }}"></script>
+
+{% endblock %}

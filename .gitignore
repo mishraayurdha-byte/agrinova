@@ -1,0 +1,29 @@
+# Virtual Environments
+.venv/
+env/
+env313/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Uploads
+uploads/
+
+# Large AI Models
+*.h5
+*.keras
+*.pt
+*.pth
+
+# Dataset
+dataset/
+training/

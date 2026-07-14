@@ -1,0 +1,250 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Disease Detection | AgriNova AI v2.0
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ========================================= -->
+    <!-- Header -->
+    <!-- ========================================= -->
+
+    <div class="row mb-4">
+
+        <div class="col-md-12">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h2 class="fw-bold">
+
+                        Plant Disease Detection
+
+                    </h2>
+
+                    <p class="text-muted mb-0">
+
+                        Upload a leaf image and identify diseases using AI.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Upload -->
+    <!-- ========================================= -->
+
+    <div class="row">
+
+        <div class="col-lg-5">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body">
+
+                    <h5 class="mb-3">
+
+                        Upload Leaf Image
+
+                    </h5>
+
+                    <input
+
+                        type="file"
+
+                        id="image"
+
+                        accept=".jpg,.jpeg,.png"
+
+                        class="form-control"
+
+                    >
+
+                    <div class="text-center mt-4">
+
+                        <img
+
+                            id="preview"
+
+                            src=""
+
+                            class="img-fluid rounded border"
+
+                            style="display:none;max-height:300px;"
+
+                        >
+
+                    </div>
+
+                    <button
+
+                        id="predictBtn"
+
+                        class="btn btn-success w-100 mt-4"
+
+                    >
+
+                        Predict Disease
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- Prediction -->
+        <!-- ========================================= -->
+
+        <div class="col-lg-7">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body">
+
+                    <h5>
+
+                        Prediction Result
+
+                    </h5>
+
+                    <hr>
+
+                    <div id="loading" style="display:none;">
+
+                        <div class="spinner-border text-success"></div>
+
+                        <span class="ms-2">
+
+                            AI is analyzing image...
+
+                        </span>
+
+                    </div>
+
+                    <div id="result" style="display:none;">
+
+                        <table class="table">
+
+                            <tr>
+
+                                <th>Crop</th>
+
+                                <td id="crop"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Disease</th>
+
+                                <td id="disease"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Confidence</th>
+
+                                <td id="confidence"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Severity</th>
+
+                                <td id="severity"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Treatment</th>
+
+                                <td id="treatment"></td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Prevention</th>
+
+                                <td id="prevention"></td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- Top 3 Predictions -->
+            <!-- ========================================= -->
+
+            <div class="card shadow-sm border-0 mt-4">
+
+                <div class="card-body">
+
+                    <h5>
+
+                        Top 3 Predictions
+
+                    </h5>
+
+                    <table class="table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Crop</th>
+
+                                <th>Disease</th>
+
+                                <th>Confidence</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="topPredictions">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/disease.js') }}"></script>
+
+{% endblock %}

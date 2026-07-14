@@ -1,0 +1,122 @@
+# =====================================================
+# AgriNova AI v2.0
+# Docker Ignore File
+# =====================================================
+
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# -----------------------------
+# Git
+# -----------------------------
+.git/
+.gitignore
+.gitattributes
+
+# -----------------------------
+# IDE / Editor
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------------
+# Operating System
+# -----------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -----------------------------
+# Environment Files
+# -----------------------------
+.env
+.env.*
+*.env
+
+# -----------------------------
+# Database
+# -----------------------------
+*.db
+*.sqlite
+*.sqlite3
+
+# -----------------------------
+# Logs
+# -----------------------------
+logs/
+*.log
+
+# -----------------------------
+# Test Files
+# -----------------------------
+tests/
+.pytest_cache/
+
+# -----------------------------
+# Temporary Files
+# -----------------------------
+tmp/
+temp/
+.cache/
+
+# -----------------------------
+# Build Artifacts
+# -----------------------------
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# -----------------------------
+# Node (if used)
+# -----------------------------
+node_modules/
+
+# -----------------------------
+# Documentation (Optional)
+# Remove these lines if you want
+# documentation inside the image.
+# -----------------------------
+docs/
+
+# -----------------------------
+# Generated Reports
+# (Remove this if reports should
+# be included in the image)
+# -----------------------------
+reports/
+
+# -----------------------------
+# User Uploads
+# (Docker volume recommended)
+# -----------------------------
+uploads/
+
+# -----------------------------
+# TensorFlow Training Artifacts
+# Ignore only temporary outputs,
+# not your production models.
+# -----------------------------
+checkpoints/
+runs/
+tensorboard/

@@ -1,0 +1,112 @@
+/*
+====================================================
+ AgriNova AI v2.0
+ Weather Intelligence Styles
+====================================================
+*/
+
+/* ---------- Weather Cards ---------- */
+
+.weather-card{
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all .3s ease;
+    background: linear-gradient(135deg,#28a745,#20c997);
+    color:#fff;
+}
+
+.weather-card:hover{
+    transform: translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.weather-card .card-body{
+    padding:25px;
+}
+
+.weather-card h6{
+    opacity:.9;
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+.weather-card h2,
+.weather-card h3,
+.weather-card h4{
+    font-weight:700;
+    margin:0;
+}
+
+/* ---------- Search ---------- */
+
+#city{
+    border-radius:10px 0 0 10px;
+}
+
+#weatherSearch{
+    border-radius:0 10px 10px 0;
+}
+
+/* ---------- AI Advice ---------- */
+
+#adviceList{
+    list-style:none;
+    padding-left:0;
+    margin:0;
+}
+
+#adviceList .list-group-item{
+    border:none;
+    border-bottom:1px solid #ececec;
+    padding:15px;
+    font-size:15px;
+}
+
+#adviceList .list-group-item:last-child{
+    border-bottom:none;
+}
+
+/* ---------- Forecast ---------- */
+
+#forecastContainer .card{
+    border:none;
+    border-radius:15px;
+    transition:.3s;
+}
+
+#forecastContainer .card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+#forecastContainer img{
+    width:60px;
+    height:60px;
+}
+
+/* ---------- Weather Information ---------- */
+
+.weather-info{
+    font-size:15px;
+    color:#666;
+}
+
+.weather-title{
+    font-weight:700;
+    color:#198754;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+    .weather-card{
+        margin-bottom:20px;
+    }
+
+    #forecastContainer .col-lg-2{
+        margin-bottom:15px;
+    }
+
+}

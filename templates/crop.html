@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block title %}Crop Recommendation{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-4">
+
+    <div class="row">
+
+        <!-- Left Side -->
+        <div class="col-lg-5">
+
+            <div class="card shadow-lg border-0">
+
+                <div class="card-header bg-success text-white">
+
+                    <h4 class="mb-0">
+                        🌱 Crop Recommendation
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form id="cropForm">
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Nitrogen (N)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="nitrogen"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Phosphorus (P)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="phosphorus"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Potassium (K)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="potassium"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Temperature (°C)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    step="0.01"
+                                    class="form-control"
+                                    id="temperature"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Humidity (%)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    step="0.01"
+                                    class="form-control"
+                                    id="humidity"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    pH
+                                </label>
+
+                                <input
+                                    type="number"
+                                    step="0.01"
+                                    class="form-control"
+                                    id="ph"
+                                    required>
+
+                            </div>
+
+                            <div class="col-md-12 mb-3">
+
+                                <label class="form-label">
+                                    Rainfall (mm)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    step="0.01"
+                                    class="form-control"
+                                    id="rainfall"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="d-grid">
+
+                            <button
+                                class="btn btn-success btn-lg"
+                                id="predictBtn"
+                                type="submit">
+
+                                🌱 Recommend Crop
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="col-lg-7">
+
+            <div
+                class="card shadow-lg border-0"
+                id="resultCard"
+                style="display:none;">
+
+                <div class="card-header bg-primary text-white">
+
+                    <h4 class="mb-0">
+                        Recommendation Result
+                    </h4>
+
+                </div>
+
+                <div class="card-body text-center">
+
+                    <h1
+                        class="display-3 text-success"
+                        id="cropResult">
+
+                    </h1>
+
+                    <hr>
+
+                    <h5>
+
+                        Confidence
+
+                    </h5>
+
+                    <div class="progress mb-3"
+                        style="height:30px;">
+
+                        <div
+                            id="confidenceBar"
+                            class="progress-bar
+                                   progress-bar-striped
+                                   progress-bar-animated
+                                   bg-success"
+                            style="width:0%;">
+
+                            0%
+
+                        </div>
+
+                    </div>
+
+                    <h3
+                        id="confidenceText">
+
+                    </h3>
+
+                    <div
+                        class="alert alert-success mt-4">
+
+                        🌾 This crop is recommended
+                        based on your soil and
+                        environmental conditions.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/crop.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,538 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Analytics Dashboard | AgriNova AI v2.0
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- ========================================= -->
+    <!-- Analytics Header -->
+    <!-- ========================================= -->
+
+    <div class="row mb-4">
+
+        <div class="col-lg-8">
+
+            <h2 class="fw-bold">
+
+                Analytics Dashboard
+
+            </h2>
+
+            <p class="text-muted">
+
+                Real-time AI insights, prediction trends and system statistics.
+
+            </p>
+
+        </div>
+
+        <div class="col-lg-4 text-end">
+
+            <button
+                id="refreshAnalytics"
+                class="btn btn-success">
+
+                <i class="fas fa-sync-alt"></i>
+
+                Refresh
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- KPI Cards -->
+    <!-- ========================================= -->
+
+    <div class="row g-4">
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <small class="text-muted">
+
+                        Total Predictions
+
+                    </small>
+
+                    <h2 id="totalPredictions">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <small class="text-muted">
+
+                        Disease Detection
+
+                    </small>
+
+                    <h2 id="totalDisease">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <small class="text-muted">
+
+                        Crop Recommendation
+
+                    </small>
+
+                    <h2 id="totalCrop">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <small class="text-muted">
+
+                        AI Chat Sessions
+
+                    </small>
+
+                    <h2 id="totalChat">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Charts -->
+    <!-- ========================================= -->
+
+    <div class="row mt-4">
+
+        <div class="col-lg-6">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-header">
+
+                    Disease Distribution
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="diseaseChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-header">
+
+                    Crop Recommendation Distribution
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="cropChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row mt-4">
+
+        <div class="col-lg-6">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-header">
+
+                    Monthly AI Usage
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="usageChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-header">
+
+                    Prediction Accuracy
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="accuracyChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-4">
+            <!-- ========================================= -->
+    <!-- Recent Activity -->
+    <!-- ========================================= -->
+
+    <div class="row">
+
+        <div class="col-lg-8">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-header">
+
+                    <h5 class="mb-0">
+
+                        Recent AI Activities
+
+                    </h5>
+
+                </div>
+
+                <div class="card-body table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead class="table-light">
+
+                            <tr>
+
+                                <th>Date</th>
+
+                                <th>Module</th>
+
+                                <th>Prediction</th>
+
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="activityTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- System Status -->
+        <!-- ========================================= -->
+
+        <div class="col-lg-4">
+
+            <div class="card border-0 shadow-sm mb-4">
+
+                <div class="card-header">
+
+                    System Status
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between mb-3">
+
+                        <span>
+
+                            Disease Model
+
+                        </span>
+
+                        <span
+                            class="badge bg-success">
+
+                            Online
+
+                        </span>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-3">
+
+                        <span>
+
+                            Crop Model
+
+                        </span>
+
+                        <span
+                            class="badge bg-success">
+
+                            Online
+
+                        </span>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-3">
+
+                        <span>
+
+                            Yield Model
+
+                        </span>
+
+                        <span
+                            class="badge bg-success">
+
+                            Online
+
+                        </span>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-3">
+
+                        <span>
+
+                            Weather API
+
+                        </span>
+
+                        <span
+                            class="badge bg-success">
+
+                            Connected
+
+                        </span>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+
+                        <span>
+
+                            AI Chatbot
+
+                        </span>
+
+                        <span
+                            class="badge bg-success">
+
+                            Running
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-header">
+
+                    Overall Accuracy
+
+                </div>
+
+                <div class="card-body text-center">
+
+                    <h1
+                        class="display-4 fw-bold text-success"
+                        id="overallAccuracy">
+
+                        98.7%
+
+                    </h1>
+
+                    <small class="text-muted">
+
+                        Average AI Prediction Accuracy
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Top Diseases -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Top Detected Diseases
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Rank</th>
+
+                        <th>Disease</th>
+
+                        <th>Count</th>
+
+                        <th>Average Confidence</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="topDiseaseTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- Top Crops -->
+    <!-- ========================================= -->
+
+    <div class="card border-0 shadow-sm mt-4">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Most Recommended Crops
+
+            </h5>
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Rank</th>
+
+                        <th>Crop</th>
+
+                        <th>Recommendations</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="topCropTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+
+{% endblock %}

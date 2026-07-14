@@ -1,0 +1,1194 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Dashboard | AgriNova AI v2.0
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Page Header -->
+
+    <div class="row mb-4">
+
+       <!-- Dashboard Welcome -->
+
+<div class="card border-0 shadow-sm mb-4">
+
+    <div class="card-body">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <h2 class="fw-bold mb-2">
+
+                    👋 Welcome to AgriNova AI
+
+                </h2>
+
+                <p class="text-muted mb-3">
+
+                    Growing Tomorrow with Smart Farming
+
+                </p>
+
+                <div class="d-flex flex-wrap gap-2">
+
+                    <span class="badge bg-success px-3 py-2">
+
+                        <i class="fas fa-circle me-1"></i>
+
+                        AI Engine Online
+
+                    </span>
+
+                    <span class="badge bg-primary px-3 py-2">
+
+                        🌾 Farm Health: 94%
+
+                    </span>
+
+                    <span class="badge bg-warning text-dark px-3 py-2">
+
+                        🤖 AI Monitoring Active
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                <div class="display-6 fw-bold text-success">
+
+                    🌱
+
+                </div>
+
+                <small class="text-muted">
+
+                    Smart Farming Dashboard
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+
+    <!-- KPI Cards -->
+
+<div class="row g-4 mb-4">
+
+    <!-- Crop Predictions -->
+
+   <div class="col-xl-3 col-md-6 mb-4">
+
+    <div class="card dashboard-card crop-card">
+
+        <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+
+                    <small class="text-white-50">
+                        Crop Predictions
+                    </small>
+
+                    <h2 class="text-white fw-bold mt-2">
+                        {{ statistics.crop_count }}
+                    </h2>
+
+                    <div class="progress mt-3" style="height:6px;">
+
+                        <div class="progress-bar bg-light"
+                             style="width:85%"></div>
+
+                    </div>
+
+                    <small class="text-white-50">
+
+                        +12% this month
+
+                    </small>
+
+                </div>
+
+                <div class="dashboard-icon">
+
+                    <i class="fas fa-seedling"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- Disease Detection -->
+
+   <div class="col-xl-3 col-md-6 mb-4">
+
+    <div class="card dashboard-card disease-card">
+
+        <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+
+                    <small class="text-white-50">
+                        Disease Detection
+                    </small>
+
+                    <h2 class="text-white fw-bold mt-2">
+                        {{ statistics.disease_count }}
+                    </h2>
+
+                    <div class="progress mt-3" style="height:6px;">
+
+                        <div class="progress-bar bg-light"
+                             style="width:70%"></div>
+
+                    </div>
+
+                    <small class="text-white-50">
+
+                        AI Scan Complete
+
+                    </small>
+
+                </div>
+
+                <div class="dashboard-icon">
+
+                    <i class="fas fa-virus"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- Weather -->
+
+    <div class="col-xl-3 col-md-6 mb-4">
+
+    <div class="card dashboard-card weather-gradient">
+
+        <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+
+                    <small class="text-white-50">
+                        Weather Records
+                    </small>
+
+                    <h2 class="text-white fw-bold mt-2">
+                        {{ statistics.weather_count }}
+                    </h2>
+
+                    <div class="progress mt-3" style="height:6px;">
+
+                        <div class="progress-bar bg-light"
+                             style="width:92%"></div>
+
+                    </div>
+
+                    <small class="text-white-50">
+
+                        Climate Updated
+
+                    </small>
+
+                </div>
+
+                <div class="dashboard-icon">
+
+                    <i class="fas fa-cloud-sun"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- AI Chat -->
+
+    <div class="col-xl-3 col-md-6 mb-4">
+
+    <div class="card dashboard-card ai-card">
+
+        <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+
+                    <small class="text-white-50">
+                        AI Assistant
+                    </small>
+
+                    <h2 class="text-white fw-bold mt-2">
+                        {{ statistics.chat_count }}
+                    </h2>
+
+                    <div class="progress mt-3" style="height:6px;">
+
+                        <div class="progress-bar bg-light"
+                             style="width:88%"></div>
+
+                    </div>
+
+                    <small class="text-white-50">
+
+                        Online
+
+                    </small>
+
+                </div>
+
+                <div class="dashboard-icon">
+
+                    <i class="fas fa-robot"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    <!-- Charts -->
+
+    <div class="row g-4 mb-4">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header">
+
+                    <strong>
+
+                        Yield Prediction Analytics
+
+                    </strong>
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="yieldChart" height="120"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header">
+
+                    <strong>
+
+                        Disease Distribution
+
+                    </strong>
+
+                </div>
+
+                <div class="card-body">
+
+                    <canvas id="diseaseChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Weather + Irrigation -->
+
+    <div class="col-lg-6">
+
+    <div class="card shadow-sm border-0 weather-card">
+
+
+        <div class="card-header bg-primary text-white">
+
+            <h5 class="mb-0">
+
+                <i class="fas fa-cloud-sun"></i>
+
+                Smart Weather Monitor
+
+            </h5>
+
+        </div>
+
+
+        <div class="card-body">
+
+
+        {% if latest_weather %}
+
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+
+
+                <div>
+
+                   <h3 class="fw-bold" id="dashboardCity">
+                            {{ latest_weather.city if latest_weather else "Delhi" }}
+                        </h3>
+
+                        <p class="text-muted mb-0" id="dashboardCondition">
+                            {{ latest_weather.condition if latest_weather else "--" }}
+                        </p>
+
+                </div>
+
+
+                <i class="fas fa-sun fa-4x text-warning"></i>
+
+
+            </div>
+
+
+
+            <div class="row text-center">
+
+
+                <div class="col-4">
+
+                    <div class="weather-box">
+
+                        <i class="fas fa-temperature-high text-danger"></i>
+
+                        <h4 id="dashboardTemp">
+                            {{ latest_weather.temperature if latest_weather else "--" }}°
+                        </h4>
+
+                        <small>
+
+                            Temperature
+
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-4">
+
+
+                    <div class="weather-box">
+
+
+                        <i class="fas fa-tint text-primary"></i>
+
+
+                     <h4 id="dashboardHumidity">
+                        {{ latest_weather.humidity if latest_weather else "--" }}%
+                    </h4>
+
+
+                        <small>
+
+                            Humidity
+
+                        </small>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-4">
+
+
+                    <div class="weather-box">
+
+
+                        <i class="fas fa-cloud-rain text-info"></i>
+
+
+                        <h4 id="dashboardWind">
+                                    {{ latest_weather.wind_speed if latest_weather else "--" }}
+                                </h4>
+
+                                <small>
+                                    Wind Speed
+                                </small>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <hr>
+
+
+            <div class="alert alert-success mb-0">
+
+
+                🌱
+
+                <strong>Farming Advice:</strong>
+
+                {% if latest_weather.temperature|float > 35 %}
+
+                    High temperature detected. Increase irrigation frequency.
+
+                {% else %}
+
+                    Weather conditions are suitable for farming activities.
+
+                {% endif %}
+
+
+            </div>
+                    <div class="text-end mt-3">
+
+                        <a href="{{ url_for('web.weather') }}"
+                        class="btn btn-success">
+
+                            <i class="fas fa-cloud-sun"></i>
+
+                            Weather Intelligence
+
+                        </a>
+
+                    </div>
+
+        {% else %}
+
+
+            <p class="text-muted">
+
+                No weather records found.
+
+            </p>
+
+
+        {% endif %}
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+    <!-- Weather + Irrigation -->
+
+
+    <!-- Quick Actions -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-lg-12">
+
+        <div class="card shadow-sm border-0">
+
+
+            <div class="card-header bg-white">
+
+                <h5 class="mb-0 fw-bold">
+
+                    <i class="fas fa-bolt text-warning"></i>
+
+                    Quick Actions
+
+                </h5>
+
+            </div>
+
+
+            <div class="card-body">
+
+
+                <div class="row g-3">
+
+
+                    <!-- Crop Prediction -->
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <a href="{{ url_for('yield_bp.yield_prediction') }}"
+                           class="text-decoration-none">
+
+
+                            <div class="quick-action-card text-center">
+
+
+                                <div class="quick-icon bg-success">
+
+                                    <i class="fas fa-seedling"></i>
+
+                                </div>
+
+
+                                <h6>
+
+                                    Crop Prediction
+
+                                </h6>
+
+
+                                <small class="text-muted">
+
+                                    AI crop analysis
+
+                                </small>
+
+
+                            </div>
+
+
+                        </a>
+
+                    </div>
+
+
+
+
+                    <!-- Disease Detection -->
+
+                    <div class="col-md-3 col-sm-6">
+
+
+                        <a href="{{ url_for('web.disease') }}"
+                           class="text-decoration-none">
+
+
+                            <div class="quick-action-card text-center">
+
+
+                                <div class="quick-icon bg-danger">
+
+                                    <i class="fas fa-virus"></i>
+
+                                </div>
+
+
+                                <h6>
+
+                                    Disease Scan
+
+                                </h6>
+
+
+                                <small class="text-muted">
+
+                                    Detect plant disease
+
+                                </small>
+
+
+                            </div>
+
+
+                        </a>
+
+
+                    </div>
+
+
+
+
+                    <!-- Irrigation -->
+
+                    <div class="col-md-3 col-sm-6">
+
+
+                        <a href="{{ url_for('web.irrigation') }}"
+                           class="text-decoration-none">
+
+
+                            <div class="quick-action-card text-center">
+
+
+                                <div class="quick-icon bg-primary">
+
+                                    <i class="fas fa-water"></i>
+
+                                </div>
+
+
+                                <h6>
+
+                                    Smart Irrigation
+
+                                </h6>
+
+
+                                <small class="text-muted">
+
+                                    Water recommendation
+
+                                </small>
+
+
+                            </div>
+
+
+                        </a>
+
+
+                    </div>
+
+
+
+
+
+                    <!-- AI Assistant -->
+
+                    <div class="col-md-3 col-sm-6">
+
+
+                        <a href="{{ url_for('web.chatbot') }}"
+                           class="text-decoration-none">
+
+
+                            <div class="quick-action-card text-center">
+
+
+                                <div class="quick-icon bg-warning">
+
+                                    <i class="fas fa-robot"></i>
+
+                                </div>
+
+
+                                <h6>
+
+                                    AI Assistant
+
+                                </h6>
+
+
+                                <small class="text-muted">
+
+                                    Ask farming questions
+
+                                </small>
+
+
+                            </div>
+
+
+                        </a>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+<!-- quick action -->
+<!-- Recent Activity -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-lg-12">
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-header bg-white">
+
+                <h5 class="mb-0 fw-bold">
+
+                    <i class="fas fa-history text-success"></i>
+
+                    Recent Activity
+
+                </h5>
+
+            </div>
+
+
+            <div class="card-body">
+
+
+                <div class="timeline">
+
+
+                    <!-- Activity 1 -->
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon bg-success">
+
+                            <i class="fas fa-seedling text-white"></i>
+
+                        </div>
+
+
+                        <div class="activity-content">
+
+                            <h6 class="mb-1">
+
+                                Crop Prediction Completed
+
+                            </h6>
+
+                            <p class="text-muted mb-0">
+
+                                AI analyzed crop conditions successfully.
+
+                            </p>
+
+                            <small class="text-secondary">
+
+                                Recently
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Activity 2 -->
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon bg-danger">
+
+                            <i class="fas fa-virus text-white"></i>
+
+                        </div>
+
+
+                        <div class="activity-content">
+
+                            <h6 class="mb-1">
+
+                                Disease Detection Scan
+
+                            </h6>
+
+                            <p class="text-muted mb-0">
+
+                                Plant health monitoring completed.
+
+                            </p>
+
+                            <small class="text-secondary">
+
+                                Recently
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!-- Activity 3 -->
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon bg-primary">
+
+                            <i class="fas fa-cloud-sun text-white"></i>
+
+                        </div>
+
+
+                        <div class="activity-content">
+
+                            <h6 class="mb-1">
+
+                                Weather Analysis Updated
+
+                            </h6>
+
+                            <p class="text-muted mb-0">
+
+                                Climate data synchronized with AI engine.
+
+                            </p>
+
+                            <small class="text-secondary">
+
+                                Recently
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!-- Activity 4 -->
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon bg-warning">
+
+                            <i class="fas fa-robot text-white"></i>
+
+                        </div>
+
+
+                        <div class="activity-content">
+
+                            <h6 class="mb-1">
+
+                                AI Recommendation Generated
+
+                            </h6>
+
+                            <p class="text-muted mb-0">
+
+                                Smart farming advice prepared.
+
+                            </p>
+
+                            <small class="text-secondary">
+
+                                Recently
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ <!-- Recent Activity -->
+    <!-- Recent Predictions -->
+
+    <div class="card shadow-sm">
+
+        <div class="card-header">
+
+            Recent Crop Predictions
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Crop</th>
+                            <th>Prediction</th>
+                            <th>Temperature</th>
+                            <th>Humidity</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    {% for item in recent_crops %}
+
+                        <tr>
+
+                            <td>{{ item.crop }}</td>
+
+                            <td>
+
+                                {{ item.prediction }}
+
+                            </td>
+
+                            <td>
+
+                                {{ item.temperature }} °C
+
+                            </td>
+
+                            <td>
+
+                                {{ item.humidity }} %
+
+                            </td>
+
+                        </tr>
+
+                    {% else %}
+
+                        <tr>
+
+                            <td colspan="4"
+                                class="text-center text-muted">
+
+                                No prediction records available.
+
+                            </td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+
+    // ==========================
+    // Yield Prediction Chart
+    // ==========================
+
+
+    const yieldCanvas = document.getElementById('yieldChart');
+
+
+    if(yieldCanvas){
+
+
+        new Chart(yieldCanvas, {
+
+            type:'line',
+
+            data:{
+
+
+                labels:[
+
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun"
+
+                ],
+
+
+                datasets:[{
+
+
+                    label:"Predicted Yield (Ton)",
+
+
+                    data:[
+
+                        12,
+                        18,
+                        15,
+                        25,
+                        30,
+                        35
+
+                    ],
+
+
+                    tension:0.4,
+
+                    fill:true
+
+
+                }]
+
+
+            },
+
+
+            options:{
+
+
+                responsive:true,
+
+
+                plugins:{
+
+
+                    legend:{
+
+                        display:true
+
+                    }
+
+
+                }
+
+
+            }
+
+
+        });
+
+
+    }
+
+
+
+
+
+    // ==========================
+    // Disease Distribution Chart
+    // ==========================
+
+
+    const diseaseCanvas = document.getElementById('diseaseChart');
+
+
+    if(diseaseCanvas){
+
+
+        new Chart(diseaseCanvas,{
+
+
+            type:'doughnut',
+
+
+            data:{
+
+
+                labels:[
+
+                    "Healthy",
+                    "Leaf Disease",
+                    "Root Disease",
+                    "Pest Attack"
+
+                ],
+
+
+                datasets:[{
+
+
+                    data:[
+
+                        65,
+                        15,
+                        10,
+                        10
+
+                    ]
+
+                }]
+
+
+            },
+
+
+            options:{
+
+
+                responsive:true,
+
+
+                plugins:{
+
+
+                    legend:{
+
+                        position:'bottom'
+
+                    }
+
+
+                }
+
+
+            }
+
+
+        });
+
+
+    }
+
+
+
+});
+
+</script>
+{% endblock %}

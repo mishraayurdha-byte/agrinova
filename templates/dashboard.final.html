@@ -1,0 +1,90 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Dashboard | AgriNova AI v2.0
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <div class="row g-4">
+
+        <!-- Crop Health -->
+        <div class="col-lg-4">
+            <div class="feature-card crop"
+                 onclick="window.location.href='/api/disease/detect'">               
+                 <div class="card-content card-overlay">
+                <i class="fas fa-seedling fa-4x"></i>
+
+                <h3>Disease Detection</h3>
+
+                <p>AI Disease Detection & Plant Monitoring</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Weather -->
+
+        <div class="col-lg-4">
+            <div class="feature-card weather"
+                 onclick="window.location.href='/weather'">
+
+                <i class="fas fa-cloud-sun fa-4x"></i>
+
+                <h3>Weather</h3>
+
+                <p>Real-time Forecast & Climate Analysis</p>
+
+            </div>
+        </div>
+
+        <!-- Yield Prediction -->
+
+        <div class="col-lg-4">
+            <div class="feature-card yield"
+                 onclick="window.location.href='/yield'">
+
+                <i class="fas fa-chart-line fa-4x"></i>
+
+                <h3>Yield Prediction</h3>
+
+                <p>AI Based Production Forecast</p>
+
+            </div>
+        </div>
+
+        <!-- Soil -->
+
+        <div class="col-lg-6">
+            <div class="feature-card soil"
+                 onclick="window.location.href='/soil'">
+
+                <i class="fas fa-leaf fa-4x"></i>
+
+                <h3>Soil Status</h3>
+
+                <p>NPK Analysis • pH • Moisture</p>
+
+            </div>
+        </div>
+
+        <!-- Irrigation -->
+
+        <div class="col-lg-6">
+            <div class="feature-card irrigation"
+                 onclick="window.location.href='/irrigation'">
+
+                <i class="fas fa-tint fa-4x"></i>
+
+                <h3>Smart Irrigation</h3>
+
+                <p>AI Water Recommendation</p>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

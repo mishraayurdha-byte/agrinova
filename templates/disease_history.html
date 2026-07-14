@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}
+Disease History
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+
+            <h4>
+                Disease Prediction History
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover">
+
+                <thead class="table-success">
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Image</th>
+
+                        <th>Crop</th>
+
+                        <th>Disease</th>
+
+                        <th>Confidence</th>
+
+                        <th>Date</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for item in history %}
+
+                    <tr>
+
+                        <td>{{ item.id }}</td>
+
+                        <td>
+
+                            <img
+                                src="/{{ item.image_path }}"
+                                width="80"
+                                class="rounded shadow">
+
+                        </td>
+
+                        <td>
+
+                            {{ item.crop }}
+
+                        </td>
+
+                        <td>
+
+                            {{ item.disease }}
+
+                        </td>
+
+                        <td>
+
+                            {{ item.confidence }} %
+
+                        </td>
+
+                        <td>
+
+                            {{ item.created_at.strftime("%d-%m-%Y %H:%M") }}
+
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+<a
+class="btn btn-success btn-sm"
+href="/report/disease/{{item.id}}">
+Download PDF
+</a>
+{% endblock %}

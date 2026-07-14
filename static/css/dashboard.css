@@ -1,0 +1,1114 @@
+/*
+====================================================
+ AgriNova AI v2.0
+ Dashboard Stylesheet
+====================================================
+*/
+
+
+/* ==============================
+   Dashboard Layout
+============================== */
+
+
+.dashboard-container {
+
+    padding:
+        20px;
+
+}
+
+
+
+.dashboard-header {
+
+    margin-bottom:
+        30px;
+
+}
+
+
+
+.dashboard-header h2 {
+
+    font-weight:
+        700;
+
+}
+
+
+
+/* ==============================
+   KPI Cards
+============================== */
+
+
+.dashboard-card {
+
+
+    min-height:
+        130px;
+
+
+    background:
+        #ffffff;
+
+
+    transition:
+        all .3s ease;
+
+
+}
+
+
+
+.dashboard-card:hover {
+
+
+    transform:
+        translateY(-8px);
+
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.12);
+
+
+}
+
+
+
+.dashboard-card h3 {
+
+
+    font-size:
+        2rem;
+
+
+    font-weight:
+        700;
+
+
+}
+
+
+
+.dashboard-card i {
+
+
+    opacity:
+        .85;
+
+
+}
+
+
+
+
+
+/* ==============================
+   Analytics Cards
+============================== */
+
+
+.analytics-card {
+
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f1f8f4
+        );
+
+
+}
+
+
+
+.analytics-card h2 {
+
+
+    color:
+        #198754;
+
+
+}
+
+
+
+/* ==============================
+   Chart Containers
+============================== */
+
+
+.chart-card {
+
+
+    background:
+        #ffffff;
+
+
+    border-radius:
+        15px;
+
+
+    padding:
+        20px;
+
+
+}
+
+
+
+.chart-card canvas {
+
+
+    max-height:
+        350px;
+
+
+}
+
+
+
+
+
+/* ==============================
+   Weather Widget
+============================== */
+
+
+.weather-card {
+
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7f1ff,
+            #ffffff
+        );
+
+
+}
+
+
+
+.weather-icon {
+
+
+    font-size:
+        70px;
+
+
+}
+
+
+
+.weather-temperature {
+
+
+    font-size:
+        3rem;
+
+
+    font-weight:
+        700;
+
+
+}
+
+
+
+
+/* ==============================
+   Disease Detection
+============================== */
+
+
+.disease-upload-box {
+
+
+    border:
+        2px dashed #198754;
+
+
+    border-radius:
+        15px;
+
+
+    padding:
+        30px;
+
+
+    text-align:
+        center;
+
+
+    background:
+        #f8fff9;
+
+
+}
+
+
+
+.disease-upload-box:hover {
+
+
+    background:
+        #d1e7dd;
+
+
+}
+
+
+
+.preview-image {
+
+
+    max-height:
+        300px;
+
+
+    border-radius:
+        15px;
+
+
+}
+
+
+
+
+
+/* ==============================
+   Prediction Result
+============================== */
+
+
+.prediction-result {
+
+
+    border-radius:
+        15px;
+
+
+    padding:
+        25px;
+
+
+}
+
+
+
+.confidence-meter {
+
+
+    height:
+        12px;
+
+
+    border-radius:
+        10px;
+
+
+    overflow:
+        hidden;
+
+
+    background:
+        #dee2e6;
+
+
+}
+
+
+
+.confidence-value {
+
+
+    height:
+        100%;
+
+
+    background:
+        #198754;
+
+
+}
+
+
+
+
+
+/* ==============================
+   Irrigation Cards
+============================== */
+
+
+.irrigation-status {
+
+
+    padding:
+        25px;
+
+
+    border-radius:
+        15px;
+
+
+    text-align:
+        center;
+
+
+}
+
+
+
+.irrigation-on {
+
+
+    background:
+        #d1e7dd;
+
+
+    color:
+        #146c43;
+
+
+}
+
+
+
+.irrigation-off {
+
+
+    background:
+        #e9ecef;
+
+
+    color:
+        #495057;
+
+
+}
+
+
+
+
+
+/* ==============================
+   Chatbot
+============================== */
+
+
+.chat-window {
+
+
+    background:
+        #f8f9fa;
+
+
+    border-radius:
+        15px;
+
+
+    padding:
+        20px;
+
+
+    height:
+        500px;
+
+
+    overflow-y:
+        auto;
+
+
+}
+
+
+
+.chat-message {
+
+
+    padding:
+        12px 18px;
+
+
+    border-radius:
+        18px;
+
+
+    margin-bottom:
+        12px;
+
+
+    max-width:
+        75%;
+
+
+}
+
+
+
+.chat-user {
+
+
+    background:
+        #198754;
+
+
+    color:
+        white;
+
+
+    margin-left:
+        auto;
+
+
+}
+
+
+
+.chat-ai {
+
+
+    background:
+        #e9ecef;
+
+
+    color:
+        #212529;
+
+
+}
+
+
+
+
+
+/* ==============================
+   Reports
+============================== */
+
+
+.report-card {
+
+
+    transition:
+        .3s;
+
+
+}
+
+
+
+.report-card:hover {
+
+
+    transform:
+        scale(1.03);
+
+
+}
+
+
+
+
+
+/* ==============================
+   Module Cards
+============================== */
+
+
+.module-card {
+
+
+    transition:
+        all .3s ease;
+
+
+}
+
+
+
+.module-card:hover {
+
+
+    transform:
+        translateY(-5px);
+
+
+}
+
+
+
+
+/* ==============================
+   Recent Activity
+============================== */
+
+
+.activity-item {
+
+
+    padding:
+        15px;
+
+
+    border-bottom:
+        1px solid #eee;
+
+
+}
+
+
+
+.activity-item:last-child {
+
+
+    border-bottom:
+        none;
+
+
+}
+
+
+
+
+
+/* ==============================
+   Scrollbar
+============================== */
+
+
+.chat-window::-webkit-scrollbar {
+
+
+    width:
+        8px;
+
+
+}
+
+
+
+.chat-window::-webkit-scrollbar-thumb {
+
+
+    background:
+        #198754;
+
+
+    border-radius:
+        10px;
+
+
+}
+
+.dashboard-card {
+    transition: all 0.3s ease;
+    border-radius: 18px;
+}
+
+.dashboard-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.icon-box {
+
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.timeline {
+
+    position:relative;
+
+}
+
+
+.activity-item {
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+.activity-item:last-child {
+
+    border-bottom:none;
+
+}
+
+
+.activity-icon {
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+}
+
+
+.activity-content h6 {
+
+    font-weight:600;
+
+}
+.weather-card {
+
+    border-radius:18px;
+
+}
+
+
+.weather-box {
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#f8f9fa;
+
+}
+
+
+.weather-box i {
+
+    font-size:25px;
+
+}
+
+
+.weather-box h4 {
+
+    margin-top:8px;
+
+    font-weight:bold;
+
+}
+.quick-action-card {
+
+    padding:25px 15px;
+
+    border-radius:18px;
+
+    background:#ffffff;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+
+    transition:0.3s ease;
+
+}
+
+
+.quick-action-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+.quick-icon {
+
+    width:65px;
+
+    height:65px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+.quick-action-card h6 {
+
+    color:#212529;
+
+    font-weight:600;
+
+}
+/* =====================================================
+   AgriNova AI v2.0 Dashboard Theme
+===================================================== */
+
+:root{
+
+    --primary:#2E7D32;
+    --secondary:#43A047;
+    --success:#4CAF50;
+    --danger:#E53935;
+    --warning:#F9A825;
+    --info:#1E88E5;
+
+    --bg:#F5F7FA;
+
+    --card:#FFFFFF;
+
+    --border:#E9ECEF;
+
+    --text:#263238;
+
+    --muted:#7B8A8B;
+
+    --radius:18px;
+
+}
+
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+}
+
+
+/* Cards */
+
+.card{
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/* Headers */
+
+.card-header{
+
+    background:white;
+
+    border-bottom:1px solid var(--border);
+
+    font-weight:600;
+
+}
+
+
+/* KPI */
+
+.dashboard-card{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.dashboard-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-35px;
+
+    top:-35px;
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+}
+
+
+/* Circular icon */
+
+.icon-box{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+}
+
+
+/* Quick Action */
+
+.quick-action-card{
+
+    transition:.3s;
+
+    border-radius:16px;
+
+    padding:22px;
+
+}
+
+.quick-action-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.quick-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:auto;
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* Timeline */
+
+.activity-item{
+
+    display:flex;
+
+    gap:18px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #EEE;
+
+}
+
+.activity-item:last-child{
+
+    border:none;
+
+}
+
+.activity-icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+}
+
+
+/* Weather */
+
+.weather-box{
+
+    border-radius:15px;
+
+    background:#F8F9FA;
+
+    padding:18px;
+
+}
+
+
+/* Tables */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#F7F8FA;
+
+}
+
+.table th{
+
+    border:none;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#43A047;
+
+    border-radius:10px;
+
+}
+
+/* ===== Premium KPI Cards ===== */
+
+.crop-card{
+    background:linear-gradient(135deg,#2E7D32,#4CAF50);
+}
+
+.disease-card{
+    background:linear-gradient(135deg,#C62828,#EF5350);
+}
+
+.weather-gradient{
+    background:linear-gradient(135deg,#1565C0,#42A5F5);
+}
+
+.ai-card{
+    background:linear-gradient(135deg,#6A1B9A,#AB47BC);
+}
+
+.dashboard-card{
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    transition:all .3s ease;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,.18);
+}
+
+.dashboard-icon{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    color:#fff;
+}
+
+.progress{
+    background:rgba(255,255,255,.25);
+}
+
+.progress-bar{
+    border-radius:10px;
+}
+
+/* ==============================
+   Reports Module
+============================== */
+
+.report-header{
+
+    border-radius:20px;
+
+}
+
+.stats-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+.report-header .badge{
+
+    font-size:.9rem;
+
+}

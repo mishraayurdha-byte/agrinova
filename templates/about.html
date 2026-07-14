@@ -1,0 +1,522 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+About | AgriNova AI v2.0
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+
+    <!-- Header -->
+
+    <div class="row mb-5">
+
+        <div class="col-lg-12 text-center">
+
+
+            <h1 class="fw-bold">
+
+                About AgriNova AI
+
+            </h1>
+
+
+            <p class="lead text-muted">
+
+                Where Artificial Intelligence Meets Agriculture
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Vision -->
+
+
+    <div class="row align-items-center mb-5">
+
+
+        <div class="col-lg-6">
+
+
+            <h2 class="fw-bold text-success">
+
+                Growing Tomorrow with Smart Farming
+
+            </h2>
+
+
+            <p>
+
+                AgriNova AI v2.0 is an intelligent agriculture platform
+                designed to help farmers make data-driven decisions
+                using Artificial Intelligence, Machine Learning,
+                weather intelligence and automation.
+
+            </p>
+
+
+            <p>
+
+                The platform combines crop disease detection,
+                yield prediction, smart irrigation,
+                weather analysis and AI assistance
+                into one unified farming ecosystem.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="col-lg-6 text-center">
+
+
+            <img
+
+            src="{{ url_for('static',
+            filename='images/about_farming.png') }}"
+
+            class="img-fluid rounded"
+
+            alt="Smart Agriculture">
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- AI Technologies -->
+
+
+    <div class="row mb-5">
+
+
+        <div class="col-lg-12">
+
+
+            <h3 class="fw-bold text-center mb-4">
+
+                Artificial Intelligence Technologies
+
+            </h3>
+
+
+        </div>
+
+
+
+        <div class="col-md-4">
+
+
+            <div class="card shadow-sm h-100">
+
+
+                <div class="card-body text-center">
+
+
+                    <i class="fas fa-brain
+                    fa-3x
+                    text-success
+                    mb-3"></i>
+
+
+                    <h5>
+
+                        TensorFlow AI
+
+                    </h5>
+
+
+                    <p>
+
+                        Deep learning model for crop disease
+                        image classification.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="col-md-4">
+
+
+            <div class="card shadow-sm h-100">
+
+
+                <div class="card-body text-center">
+
+
+                    <i class="fas fa-chart-line
+                    fa-3x
+                    text-primary
+                    mb-3"></i>
+
+
+                    <h5>
+
+                        Machine Learning
+
+                    </h5>
+
+
+                    <p>
+
+                        Scikit-learn models for crop
+                        yield prediction.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="col-md-4">
+
+
+            <div class="card shadow-sm h-100">
+
+
+                <div class="card-body text-center">
+
+
+                    <i class="fas fa-robot
+                    fa-3x
+                    text-warning
+                    mb-3"></i>
+
+
+                    <h5>
+
+                        AI Assistant
+
+                    </h5>
+
+
+                    <p>
+
+                        Smart chatbot for agriculture
+                        related guidance.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Modules -->
+
+
+    <div class="row mb-5">
+
+
+        <div class="col-lg-12">
+
+
+            <div class="card shadow-sm">
+
+
+                <div class="card-header bg-success text-white">
+
+
+                    AgriNova AI Modules
+
+
+                </div>
+
+
+                <div class="card-body">
+
+
+                    <div class="row text-center">
+
+
+                        <div class="col-md-3 mb-3">
+
+
+                            <i class="fas fa-virus fa-2x text-danger"></i>
+
+
+                            <p class="mt-2">
+
+                                Disease Detection
+
+                            </p>
+
+
+                        </div>
+
+
+
+                        <div class="col-md-3 mb-3">
+
+
+                            <i class="fas fa-seedling fa-2x text-success"></i>
+
+
+                            <p class="mt-2">
+
+                                Yield Prediction
+
+                            </p>
+
+
+                        </div>
+
+
+
+
+                        <div class="col-md-3 mb-3">
+
+
+                            <i class="fas fa-water fa-2x text-primary"></i>
+
+
+                            <p class="mt-2">
+
+                                Smart Irrigation
+
+                            </p>
+
+
+                        </div>
+
+
+
+
+                        <div class="col-md-3 mb-3">
+
+
+                            <i class="fas fa-cloud-sun fa-2x text-warning"></i>
+
+
+                            <p class="mt-2">
+
+                                Weather Intelligence
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Technology Stack -->
+
+
+    <div class="row">
+
+
+        <div class="col-lg-12">
+
+
+            <h3 class="text-center fw-bold mb-4">
+
+                Technology Stack
+
+            </h3>
+
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+
+            <div class="card text-center shadow-sm">
+
+
+                <div class="card-body">
+
+
+                    <h5>
+
+                        Backend
+
+                    </h5>
+
+
+                    <p>
+
+                        Flask<br>
+                        SQLAlchemy<br>
+                        SQLite
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+
+            <div class="card text-center shadow-sm">
+
+
+                <div class="card-body">
+
+
+                    <h5>
+
+                        AI
+
+                    </h5>
+
+
+                    <p>
+
+                        TensorFlow<br>
+                        Scikit-learn
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+
+            <div class="card text-center shadow-sm">
+
+
+                <div class="card-body">
+
+
+                    <h5>
+
+                        Frontend
+
+                    </h5>
+
+
+                    <p>
+
+                        Bootstrap 5<br>
+                        HTML<br>
+                        JavaScript
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="col-md-3">
+
+
+            <div class="card text-center shadow-sm">
+
+
+                <div class="card-body">
+
+
+                    <h5>
+
+                        Deployment
+
+                    </h5>
+
+
+                    <p>
+
+                        Docker<br>
+                        Gunicorn<br>
+                        Nginx
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
