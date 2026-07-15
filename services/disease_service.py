@@ -52,12 +52,35 @@ CONFIDENCE_THRESHOLD = 50.0
 # ==========================================================
 # Disease Service
 # ==========================================================
+import requests
+
+MODEL_URL = "https://huggingface.co/Ayurdha/agrinova-disease-model/resolve/main/disease_model.h5"
 
 class DiseaseService:
 
     def __init__(self):
 
         print("\nLoading Disease Detection Model...")
+        if not MODEL_PATH.exists():
+
+            print("Model not found. Downloading...")
+           
+            response = requests.get(MODEL_URL, stream=True,timeout=300)
+
+            response.raise_for_status()
+
+            MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
+            total=0
+            with open(MODEL_PATH, "wb") as f:
+                   for chunk in response.iter_content(1024 * 1024):
+                    if chunk:
+                        f.write(chunk)
+                        total += len(chunk)
+                        print(f"Downloaded {total // (1024*1024)} MB", end="\r")
+
+            print("\n✅ Model downloaded successfully.")
+
+            
 
         self.model = tf.keras.models.load_model(
 
@@ -67,7 +90,7 @@ class DiseaseService:
 
         )
 
-        print("Model Loaded Successfully")
+        print("✅ Model Loaded Successfully")
 
 
 

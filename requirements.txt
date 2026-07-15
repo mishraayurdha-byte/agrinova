@@ -1,68 +1,31 @@
-# ==========================
-# AgriNova AI v2.0
-# Production Requirements
-# ==========================
-
-# Flask Framework
 Flask==3.0.3
-Werkzeug==3.0.3
-Jinja2==3.1.4
-MarkupSafe==2.1.5
-itsdangerous==2.2.0
-click==8.1.7
-blinker==1.8.2
-
-# Database
-SQLAlchemy==2.0.31
 Flask-SQLAlchemy==3.1.1
 Flask-Migrate==4.0.7
-alembic==1.13.2
+SQLAlchemy==2.0.31
+gunicorn==23.0.0
 
-# Environment Variables
 python-dotenv==1.0.1
 
-# AI / Machine Learning
-#tensorflow==2.16.1
-#scikit-learn==1.5.1
-#numpy==1.26.4
-#pandas==2.2.2
-#joblib==1.4.2
-#scipy==1.14.0
-scikit-learn
+tensorflow==2.20.0
+keras==3.15.0
 
+numpy==2.1.3
+pandas==2.2.3
+scikit-learn==1.7.0
+scipy==1.16.0
+joblib==1.5.1
 
-# Image Processing
-#upgrade Pillow
-opencv-python==4.10.0.84
+opencv-python-headless==4.12.0.88
+Pillow==11.3.0
 
-# HTTP Requests
-requests==2.32.3
+matplotlib==3.10.3
 
-# Data Visualization
-matplotlib
+requests==2.32.4
 
-# Reports
+google-generativeai
+
 reportlab
 openpyxl
 XlsxWriter
 
-# Production Server
-gunicorn
-
-# Testing
-pytest
-pytest-cov
-
-# Utilities
 tqdm
-
-# Excel Support
-et-xmlfile==1.1.0
-
-Flask
-Flask-SQLAlchemy
-Flask-Migrate
-SQLAlchemy
-pandas
-reportlab
-google-generativeai

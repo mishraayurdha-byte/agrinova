@@ -200,7 +200,8 @@ class WeatherService:
 
         }
 
-
+        print("Forecast API Key:", Config.OPENWEATHER_API_KEY)
+        print("Forecast URL:", Config.FORECAST_URL)
 
         try:
 

@@ -18,6 +18,13 @@ __pycache__/
 # Uploads
 uploads/
 
+# Database
+*.db
+instance/
+
+# Logs
+logs/
+
 # Large AI Models
 *.h5
 *.keras
