@@ -51,5 +51,4 @@ class Config:
 
         FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
-        print("BASE_DIR:", BASE_DIR)
-        print("DATABASE_URI:", Config.SQLALCHEMY_DATABASE_URI)
+        
