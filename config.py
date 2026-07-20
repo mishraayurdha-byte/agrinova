@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env
-load_dotenv()
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -51,4 +51,8 @@ class Config:
 
         FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
-      
+    # ==========================================
+    # Gemini API
+    # ==========================================
+
+        GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
