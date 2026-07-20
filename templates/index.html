@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 
 
 {% block title %}
@@ -18,17 +18,17 @@ AgriNova AI | Smart Farming
 <!-- Hero Section -->
 
 
-<section class="hero-section p-5 rounded shadow">
+<section class="hero-section p-5 rounded shadow" style="background-image: url('/static/images/banner.png'); background-size: cover; ">
 
 
     <div class="row align-items-center">
 
 
 
-        <div class="col-lg-7">
+        <div class="col-lg-12">
 
 
-            <h1 class="display-4 fw-bold">
+            <h2 class="display-4">
 
 
                 🌱 Growing Tomorrow with
@@ -41,7 +41,7 @@ AgriNova AI | Smart Farming
                 </span>
 
 
-            </h1>
+            </h2>
 
 
 
@@ -58,43 +58,78 @@ AgriNova AI | Smart Farming
 
             </p>
 
+        </div>
+<!-- Dashboard Welcome -->
 
+<div class="card border-0 shadow-sm mb-4" style="width: 80%;">
 
+    <div class="card-body">
 
+        <div class="row align-items-center">
 
-            <a href="/dashboard"
-               class="btn btn-success btn-lg mt-3">
+            <div class="col-lg-8">
 
+                <h2 class="fw-bold mb-2">
 
-                <i class="bi bi-speedometer2"></i>
+                    👋 Welcome to AgriNova AI
 
+                </h2>
 
-                Open AI Dashboard
+                <p class="text-muted mb-3">
 
+                    
 
-            </a>
+                </p>
 
+                <div class="d-flex flex-wrap gap-2">
 
+                    <span class="badge bg-success px-3 py-2">
+
+                        <i class="fas fa-circle me-1"></i>
+
+                        AI Engine Online
+
+                    </span>
+
+                    <span class="badge bg-primary px-3 py-2">
+
+                        🌾 Farm Health: 96%
+
+                    </span>
+
+                    <span class="badge bg-warning text-dark px-3 py-2">
+
+                        🤖 AI Monitoring Active
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                <div class="display-6 fw-bold text-success">
+
+                    🌱
+
+                </div>
+
+                <small class="text-muted">
+
+                    AI Powered Agriculture
+
+                </small>
+
+            </div>
 
         </div>
 
+    </div>
 
+</div>
 
-
-
-        <div class="col-lg-5 text-center">
-
-
-            <i class="bi bi-tree-fill display-1 text-success"></i>
-
-
-
-            <h3 class="mt-3">
-
-                AI Powered Agriculture
-
-            </h3>
-
+    </div>         
 
 
         </div>
@@ -115,143 +150,93 @@ AgriNova AI | Smart Farming
 <!-- Features -->
 
 
-<section class="mt-5">
-
-
-<h2 class="text-center mb-4">
-
-    🤖 AgriNova AI Features
-
-</h2>
-
-
-
+<section class="agrimain">
 
 <div class="row g-4">
 
 
-
-
-
 <!-- Disease -->
 
-<div class="col-md-4">
+<div class="col-md-4" style="width: 29%; padding-left: 30px;">
 
 
 <div class="card shadow h-100">
-
-
-<div class="card-body text-center">
-
-
-<i class="bi bi-camera-fill display-4 text-success"></i>
-
-
-
-<h5 class="mt-3">
+<a  href="/api/disease/detect" style="text-decoration:none  !important;">
+    <div class="card-body text-center">
+ <img class="plantdisease" src="/static/images/Plantdisease.png" alt="" data-image-width="500" data-image-height="360" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+     
+<h3 class="mt-3">
 
 AI Disease Detection
 
-</h5>
+</h3>
 
+<p style="color: chocolate  !important;">
 
-<p>
-
-Detect crop diseases using AI image analysis.
+This uses Artificial Intelligence and Deep Learning to identify crop diseases. The farmer uploads an image of a crop leaf, and the trained AI model analyzes the image to detect the disease and provides the predicted result. Early disease detection helps farmers reduce crop loss and take preventive action quickly.
 
 </p>
+</div>
+</a>
+</div>
+</div>
+
+
+<!-- weather -->
+
+
+<div class="col-md-4" style="width: 29%;">
+
+<div class="card shadow h-100">
+
+<a  href="/weather" style="text-decoration:none  !important;">
+    <div class="card-body text-center">
+ <img class="plantdisease" src="/static/images/weather.png" alt="" data-image-width="500" data-image-height="360" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+     
+<h3 class="mt-3">
+
+Weather intelligence
+
+</h3>
+
+
+<p style="color: chocolate  !important;">
+Weather plays a crucial role in farming. This module provides real-time weather information such as temperature, humidity, rainfall, and wind speed. Based on these conditions, the system also provides farming recommendations to help farmers prepare for changing weather.
+</p>
+</div>
+</a>
 
 
 </div>
 
-
-</div>
-
-
 </div>
 
 
 
+<!-- chatbot -->
 
 
-
-
-<!-- Irrigation -->
-
-
-<div class="col-md-4">
+<div class="col-md-4" style="width: 29%;">
 
 
 <div class="card shadow h-100">
 
+<a  href="/chatbot" style="text-decoration:none  !important;">
+    <div class="card-body text-center">
+ <img class="plantdisease" src="/static/images/chatbot.png" alt="" data-image-width="500" data-image-height="360" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+     
+<h3 class="mt-3">
 
-<div class="card-body text-center">
+Chatbot AI
 
-
-<i class="bi bi-droplet-fill display-4 text-primary"></i>
-
-
-
-<h5 class="mt-3">
-
-Smart Irrigation
-
-</h5>
+</h3>
 
 
-<p>
-
-AI recommends the right amount of water.
-
+<p style="color: chocolate  !important;">
+    The AI Chatbot serves as a virtual agricultural assistant. Farmers can ask questions in natural language, such as suitable crops, disease management, irrigation methods, or farming practices. The chatbot instantly provides helpful agricultural guidance.
 </p>
-
-
 </div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- Weather -->
-
-
-<div class="col-md-4">
-
-
-<div class="card shadow h-100">
-
-
-<div class="card-body text-center">
-
-
-<i class="bi bi-cloud-sun-fill display-4 text-warning"></i>
-
-
-
-<h5 class="mt-3">
-
-Weather Intelligence
-
-</h5>
-
-
-<p>
-
-Analyze weather conditions for farming decisions.
-
-</p>
-
-
-</div>
-
+</a>
 
 </div>
 
@@ -283,7 +268,7 @@ Analyze weather conditions for farming decisions.
 
 
 
-<div class="col-md-6">
+<div class="footer hero-section" style="text-align: center; padding: 19px;">
 
 
 <h3>
@@ -315,44 +300,7 @@ practices using intelligent solutions.
 
 
 
-<div class="col-md-6">
 
-
-<ul class="list-group">
-
-
-<li class="list-group-item">
-
-🤖 AI Crop Analysis
-
-</li>
-
-
-<li class="list-group-item">
-
-🌱 Soil Intelligence
-
-</li>
-
-
-<li class="list-group-item">
-
-💧 Water Optimization
-
-</li>
-
-
-<li class="list-group-item">
-
-📊 Farm Analytics
-
-</li>
-
-
-</ul>
-
-
-</div>
 
 
 </div>

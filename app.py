@@ -1,6 +1,6 @@
 """
 ==========================================================
-AgriNova AI v2.0
+AgriNova AI 
 
 Main Flask Application
 
@@ -97,7 +97,7 @@ def create_app():
 
         return {
             "status": "running",
-            "application": "AgriNova AI v2.0"
+            "application": "AgriNova AI "
         }
 
 

@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 
 {% block title %}
-Disease Detection | AgriNova AI v2.0
+Disease Detection | AgriNova AI
 {% endblock %}
 
 {% block content %}
@@ -201,7 +201,7 @@ Disease Detection | AgriNova AI v2.0
             <!-- Top 3 Predictions -->
             <!-- ========================================= -->
 
-            <div class="card shadow-sm border-0 mt-4">
+            <div class="card shadow-sm border-0 mt-4" style="display: none !important;">
 
                 <div class="card-body">
 
@@ -238,12 +238,42 @@ Disease Detection | AgriNova AI v2.0
                 </div>
 
             </div>
+         
 
         </div>
 
     </div>
-
 </div>
+     <!-- AI Vision -->
+
+
+        <section class="mt-5 p-4 bg-light rounded">
+
+        <div class="row">
+        <div class="footer hero-section" style="text-align: center; padding: 19px;">
+        <h3>
+
+        🌿 Disease Detection
+
+        </h3>
+        <p>
+
+        This module uses Artificial Intelligence and Deep Learning to identify crop diseases. 
+        The farmer uploads an image of a crop leaf, and the trained AI model analyzes the image 
+        to detect the disease and provides the predicted result. 
+        Early disease detection helps farmers reduce crop loss and take preventive action quickly.
+            
+            Upload leaf image
+            AI processes the image
+            Disease is detected
+            Result is displayed instantly
+        </p>
+
+        </div>
+        </div>
+        </section>  
+
+
 
 <script src="{{ url_for('static', filename='js/disease.js') }}"></script>
 

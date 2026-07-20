@@ -231,13 +231,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Button Click
     // ===============================
 
-    sendBtn.addEventListener(
+        sendBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            console.log("Send button clicked");
+            sendMessage();
+        });
 
-        "click",
-
-        sendMessage
-
-    );
 
     // ===============================
     // Enter Key

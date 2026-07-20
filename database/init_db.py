@@ -1,7 +1,7 @@
 """
 database/init_db.py
 
-Database initialization for AgriNova AI v2.0
+Database initialization for AgriNova AI 
 """
 
 import logging

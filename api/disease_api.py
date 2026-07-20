@@ -1,7 +1,7 @@
 """
 ==========================================================
 
-AgriNova AI v2.0
+AgriNova AI 
 
 Disease Detection API
 

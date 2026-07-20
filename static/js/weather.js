@@ -1,6 +1,6 @@
 /*
 ====================================================
- AgriNova AI v2.0
+ AgriNova AI
  Weather Intelligence Module
 ====================================================
 */
@@ -74,8 +74,9 @@ async function loadWeather(city) {
         updateWeatherUI(result.weather);
 
         updateAdvice(result.farming_advice);
+        console.
 
-        showToast("Weather updated successfully.", "success");
+        showMessage("Weather updated successfully.", "success");
 
     }
 
@@ -83,7 +84,7 @@ async function loadWeather(city) {
 
         console.error(error);
 
-        showToast("Unable to fetch weather.", "danger");
+        showMessage("Unable to fetch weather.", "danger");
 
     }
 
