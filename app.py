@@ -109,20 +109,11 @@ def create_app():
 # Run Application
 # ==========================================================
 
-if __name__ == "__main__":
 
-    app1 = create_app()
-
-    app1.run(
-    host="0.0.0.0",
-    port=int(os.getenv("PORT", 5000)),
-    debug=os.getenv("FLASK_DEBUG", "False").lower() == "true"
-)
-    
-    app1 = create_app()
-
+# Create the application for Gunicorn
 app = create_app()
 
+# Run locally
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
