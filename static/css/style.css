@@ -678,3 +678,40 @@ img {
 .crop{
     background-image:url("../images/crop_bg.jpg");
 }
+
+/* Mic button css */
+#mic-btn{
+
+    width:60px;
+
+    transition:.3s;
+
+}
+
+#mic-btn.listening{
+
+    background:#198754;
+
+    color:#fff;
+
+    border-color:#198754;
+
+    animation:pulse 1s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}

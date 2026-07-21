@@ -128,14 +128,27 @@ Chat Assistant | AgriNova AI
 
                     <div class="input-group">
 
-                        <input
-                            type="text"
-                            id="user-message"
-                            class="form-control"
-                            placeholder="Ask your farming question...">
+                           
+
+                            <input
+                                type="text"
+                                id="user-message"
+                                class="form-control"
+                                placeholder="Ask AgriNova AI Farming related question...">
+
+                        <button
+                            id="mic-btn"
+                            type="button"
+                            class="btn btn-outline-success"
+                            title="Speak">
+
+                            <i class="fas fa-microphone"></i>
+
+                        </button>
 
                         <button
                             id="send-btn"
+                            type="button"
                             class="btn btn-success">
 
                             <i class="fas fa-paper-plane"></i>
@@ -147,7 +160,7 @@ Chat Assistant | AgriNova AI
                     </div>
 
                 </div>
-
+            <!-- /Input -->
             </div>
 
         </div>
@@ -155,7 +168,9 @@ Chat Assistant | AgriNova AI
     </div>
 
 </div>
-
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
 
 {% endblock %}
